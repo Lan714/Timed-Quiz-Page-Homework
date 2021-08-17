@@ -2,31 +2,30 @@ const scores = JSON.parse(localStorage.getItem('scores')) ||[]
 
 
 let questions = [{
-  question: "_______ is the process of finding errors and fixing them within a program.",
-  choices: ["Debugging", "Executing", "Compiling", "Scanning"],
-  correct: ['correct', 'incorrect', 'incorrect', 'incorrect']
-
-}
-,
-{
-  question:"Which of the following loops will execute the body of a loop even when the condition controlling the loop is initially false?",
-  choices: ["none of them", "for", "do-while", "while"],
+  question: "A _______ is an operation which sends the latest changes of a source code to a repository",
+  choices: ["promise", "declaration", "commit", "apply"],
   correct: ['incorrect', 'incorrect', 'correct', 'incorrect']
+
 },
 {
-  question: "Which of the following operators can operate on a boolean variable?",
-  choices: ['1,2, & 4', '3 & 2', '1, & 4', '1,2 & 3'],
+  question:"Which of the following Array methods will add a new element at the end of an array?",
+  choices: ["pull()", "push()", "lift()", "addition()"],
+  correct: ['incorrect', 'correct', 'incorrect', 'incorrect']
+},
+{
+  question: "The HTML element _____ defines a paragraph.",
+  choices: ['<p>', '<p1>', '<br>', 'A & B'],
   correct: ['incorrect', 'incorrect', 'incorrect', 'correct']
 },
 {
-  question: "Which built-in method calls a function for each element in the array?",
-  choices: ["forEach()", "loop", "while()", "None of the above"],
-  correct: ["correct","incorrect", "incorrect", "incorrect" ]
+  question: "_____ is a variable that cannot be reassigned.",
+  choices: ["var", "con", "let", "None of the above"],
+  correct: ["incorrect","incorrect", "incorrect", "correct" ]
 },
 {
-  question: "Which of the following function of Array ojects adds on or more elements to the front of an array and returns the new length of the array?",
-  choices: ["upshift()", "sort", "splice", "toString()"],
-  correct: ['correct', 'incorrect', 'incorrect', 'incorrect']
+  question: "____ is the langauge we use to style an HTML document",
+  choices: ["CBS", "CNN", "CSS", "CSPAN"],
+  correct: ['incorrect', 'correct', 'incorrect', 'incorrect']
 }]
 
 let index = 0 
