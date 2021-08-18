@@ -18,7 +18,7 @@
         background-color: red;
       }
       body{
-        background-color: rgba(201, 174, 174, 0.427)
+        background-color: rgba(12, 14, 12, 0.427)
       }
     </style>
 </head>
@@ -28,7 +28,23 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid text-white">
       <a class="navbar text-white" href="./scores.html">View Scores</a>
-      <button class="navbar"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="navbar-brand text-white " aria-current="page" href="./index.html">Home</a>
+        </li>
+    
+        </ul>
+        <span class="navbar-brand text-white">
+        Timer: </span>
+        <span id="seconds" class="navbar-brand text-white">100
+    
+        </span>
+      </div>
     </div>
   </nav>
 

@@ -14,7 +14,7 @@ let questions = [{
 },
 {
   question: "The HTML element _____ defines a paragraph.",
-  choices: ['<p>', '<p1>', '<br>', 'A & B'],
+  choices: [`<p>`, `<p1>`, `<br>`, 'A & B'],
   correct: ['incorrect', 'incorrect', 'incorrect', 'correct']
 },
 {
@@ -41,43 +41,43 @@ const renderQuestion = (q) => {
   {
 
 
-  document.getElementById('questions').innerHTML = ''  
-  const questionElem = document.createAttribute.getElementById('div')
-  questionElem.innerHTML = `
-  <h1>${q.question}</h>
-    <div class="row>
-      <div class="col-1 mt-5" style="display: flex;justify-content: center;">
-        <button type="button" class="btn btn-primary ${q.correct[0]}">A</button>
-      </div>
-      <div class="col-1 mt-5">
-      ${q.choices[0]}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-1 mt-5"style="display: flex; justify content: center;">
-        <button type="button" class="btn btn-primary ${q.correct[1]}">B</button>
-      </div>
-      <div class="col-10 mt-5">
-      ${q.choices[1]}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-1 mt-5" style="display: flex; justify-content: center;">
-        <button type="button" class="btn btn-primary ${q.correct[2]}">C</button>
-      </div>
-      <div class="col-10 mt-5">
-        ${q.choices[2]}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-1 mt-5" style="display: flex; justify-content: center;">
-        <button type="button" class="btn btn-primary ${q.correct[3]}">C</button>
-      </div>
-      <div class="col-10 mt-5">
-        ${q.choices[3]}
-      </div>
-    </div>
 
+  document.getElementById('questions').innerHTML = ''  
+  const questionElem = document.createElement('div')
+  questionElem.innerHTML = `
+    <h1>${q.question}</h1>
+        <div class="row">
+          <div class="col-1 mt-5" style="display: flex; justify-content: center;">
+            <button type="button" class="btn btn-primary ${q.correct[0]}">A</button>
+          </div>
+          <div class="col-10  mt-5">
+           ${q.choices[0]}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1  mt-5"style="display: flex; justify-content: center;" >
+            <button type="button" class="btn btn-primary ${q.correct[1]}">B</button>
+          </div>
+          <div class="col-10 mt-5">
+           ${q.choices[1]}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1  mt-5" style="display: flex; justify-content: center;">
+            <button type="button" class="btn btn-primary ${q.correct[2]}">C</button>
+          </div>
+          <div class="col-10 mt-5">
+            ${q.choices[2]}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1  mt-5" style="display: flex; justify-content: center;">
+            <button type="button" class="btn btn-primary ${q.correct[3]}">D</button>
+          </div>
+          <div class="col-10  mt-5">
+           ${q.choices[3]}
+          </div>
+        </div>
     `
     document.getElementById('questions').append(questionElem)
     index++
@@ -129,9 +129,9 @@ document.getElementById('start').addEventListener('click', event => {
   index=0
   timer = setInterval(() => {
     seconds--
-    document.getElementById('second').innerText = seconds
+    document.getElementById('seconds').innerText = seconds
   }, 1000)
-renderQuestion(question[index])
+renderQuestion(questions[index])
 
 })
 
@@ -140,14 +140,14 @@ document.addEventListener('click', event => {
   {
     event.target.classList.add('green')
     correct++
-    alert('You got this one right!')
+    alert(`That's the right answer!`)
     renderQuestion(questions[index])
 
   }
   else if(event.target.classList.contains('incorrect')){
     event.target.classList.add('red')
     incorrect++
-    alert('You got this one wrong!')
-    renderQuestion(question[index])
+    alert('Sorry! Wrong answer!')
+    renderQuestion(questions[index])
   }
 })
