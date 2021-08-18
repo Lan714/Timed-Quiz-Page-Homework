@@ -13,8 +13,8 @@ let questions = [{
   correct: ['incorrect', 'correct', 'incorrect', 'incorrect']
 },
 {
-  question: "The HTML element _____ defines a paragraph.",
-  choices: [`<p>`, `<p1>`, `<br>`, 'A & B'],
+  question: "The _____ attribute specifies the path to an image.",
+  choices: [`alt`, `img`, `pic`, 'src'],
   correct: ['incorrect', 'incorrect', 'incorrect', 'correct']
 },
 {
@@ -24,7 +24,7 @@ let questions = [{
 },
 {
   question: "____ is the langauge we use to style an HTML document",
-  choices: ["CBS", "CNN", "CSS", "CSPAN"],
+  choices: ["CBS", "CSS", "CNN", "CSPAN"],
   correct: ['incorrect', 'correct', 'incorrect', 'incorrect']
 }]
 
@@ -84,19 +84,19 @@ const renderQuestion = (q) => {
   }
   else{
     clearInterval(timer)
-    let elpasedTime = document.getElementById('seconds').textContent
+    let elapsedTime = document.getElementById('seconds').textContent
     document.getElementById('questions').innerHTML = ''
     const finalScore = document.createElement('div')
-    percentage = correct / (correct + incorrect)
+    percentage = ((correct / (correct + incorrect))* 100)
     finalScore.innerHTML = `
     <h1>Final Score</h1>
         <h2>Answers Correct: ${correct}</h2>
         <h2>Incorrect: ${incorrect}</h2>
-        <h2>Percentage: ${percentage}</h2>
-        <h2>Elapsed Time: ${elapsedTime}</h2>
+        <h2>Percentage: ${percentage}%</h2>
+        <h2>Time Left: ${elapsedTime}</h2>
         <form>
           <div class="mb-3>
-            <label for="initials" class="form-label text-white>Enter your initials here to record your score!</label>
+            <label for="initials" class="form-label text-white">Enter your initials here to record your score!</label>
             <input id="initials" type="text" class="form-control" style="width:25%">
           </div>
           <button id="highScore" type="submit" class="btn btn-primary">Submit</button>
@@ -107,8 +107,8 @@ const renderQuestion = (q) => {
       event.preventDefault()
       console.log('caught')
       let name = document.getElementById('initials').value
-      console.log('name')
-      scores.push({name, percentage, elpasedTime})
+      console.log(name)
+      scores.push({ name, percentage, elapsedTime})
 
       localStorage.setItem('scores', JSON.stringify(scores))
       location.reload();

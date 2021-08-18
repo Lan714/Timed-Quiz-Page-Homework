@@ -2,7 +2,7 @@ const scores = JSON.parse(localStorage.getItem('scores')) ||[]
 
 const renderScores =() => {
 
-  scores.forEach((key => {
+  scores.forEach((key) => {
     const scoreElem = document.createElement('div')
 
     scoreElem.innerHTML = `
@@ -11,7 +11,7 @@ const renderScores =() => {
                 ${key.name}
                 </div>
                 <div class="col">
-                  ${key.percentage}
+                  ${key.percentage}%
                   </div>
                   <div class="col">
                     ${key.elapsedTime} seconds
