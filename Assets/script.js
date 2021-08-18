@@ -5,6 +5,7 @@ let questions = [{
   question: "A _______ is an operation which sends the latest changes of a source code to a repository",
   choices: ["promise", "declaration", "commit", "apply"],
   correct: ['incorrect', 'incorrect', 'correct', 'incorrect']
+
 },
 {
   question:"Which of the following Array methods will add a new element at the end of an array?",
@@ -146,7 +147,8 @@ document.addEventListener('click', event => {
   else if(event.target.classList.contains('incorrect')){
     event.target.classList.add('red')
     incorrect++
-    alert('Sorry! Wrong answer!')
+    seconds-=5
+    alert('Wrong answer! 5 seconds off!')
     renderQuestion(questions[index])
   }
 })
