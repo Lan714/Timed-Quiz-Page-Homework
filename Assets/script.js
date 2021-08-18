@@ -33,7 +33,7 @@ let correct = 0
 let incorrect = 0
 let percentage = 0
 let timer = ''
-let seconds = 100
+let seconds = 60
 
 
 const renderQuestion = (q) => {
