@@ -5,7 +5,6 @@ let questions = [{
   question: "A _______ is an operation which sends the latest changes of a source code to a repository",
   choices: ["promise", "declaration", "commit", "apply"],
   correct: ['incorrect', 'incorrect', 'correct', 'incorrect']
-
 },
 {
   question:"Which of the following Array methods will add a new element at the end of an array?",
@@ -93,7 +92,7 @@ const renderQuestion = (q) => {
         <h2>Answers Correct: ${correct}</h2>
         <h2>Incorrect: ${incorrect}</h2>
         <h2>Percentage: ${percentage}%</h2>
-        <h2>Time Left: ${elapsedTime}</h2>
+        <h2>Time Left: ${elapsedTime} seconds</h2>
         <form>
           <div class="mb-3>
             <label for="initials" class="form-label text-white">Enter your initials here to record your score!</label>
